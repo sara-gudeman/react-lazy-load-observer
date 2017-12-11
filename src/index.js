@@ -67,7 +67,6 @@ class LazyLoad extends React.Component {
     entries.forEach((entry) => {
       var visiblePct = (Math.floor(entry.intersectionRatio * 100)) + "%";
       entry.target.innerHTML = visiblePct;
-      console.log(entry.intersectionRatio)
       if (entry.intersectionRatio === 1.0) {
         entry.target.style.backgroundColor = 'blue';
         this.visible = true;
@@ -91,35 +90,29 @@ class LazyLoad extends React.Component {
   }
 }
 
-class Image extends React.Component {
+class TestComponent extends React.Component {
   render() {
     return <div style={{height: '200px', width: '20px'}}>hello</div>;
   }
 }
 
-class TestImage extends React.Component {
-  render() {
-    return <div style={{height: '200px', width: '20px'}}>hello</div>
-  }
-}
-
-const TestImageWrapped = lazyLoaderHOC(TestImage);
+const TestComponentWrapped = lazyLoaderHOC(TestComponent);
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <Image />
+        <TestComponent />
         <LazyLoad>
-          <Image />
+          <TestComponent />
         </LazyLoad>
         <LazyLoad>
-          <Image />
+          <TestComponent />
         </LazyLoad>
-        <TestImageWrapped />
-        <TestImageWrapped />
-        <TestImageWrapped />
-        <TestImageWrapped />
+        <TestComponentWrapped />
+        <TestComponentWrapped />
+        <TestComponentWrapped />
+        <TestComponentWrapped />
       </div>
     );
   }
