@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "tbd"
+    "url": "https://github.com/sara-gudeman/react-lazy-load-observer.git"
   },
   "author": "Sara Gudeman",
   "license": "ISC",
